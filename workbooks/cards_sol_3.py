@@ -351,3 +351,6 @@ class Player():
     
     def swapByIndexAndCard(self, index, card):
         self.hand.swapByIndex(index, card)
+
+
+        #
