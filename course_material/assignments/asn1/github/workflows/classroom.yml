@@ -1,0 +1,36 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Download a file
+      run: curl https://github.com/AkeemSemper/Programming_Basics_for_ML/blob/5653d0473ae5d15ca092a31ef99dc68e8a1c1eb9/data/Strength%20Training.csv -o Strength_Training.csv
+    - name: Download a file 2
+      run: curl https://github.com/AkeemSemper/Programming_Basics_for_ML/blob/c8545312b57f3b6a67b619ce732e0eaf1f064d73/data/Car%20Electronics.csv -o Car_Electronics.csv
+    - name: Do an LS
+      run: ls  
+    - name: pytest
+      id: pytest
+      uses: classroom-resources/autograding-python-grader@v1
+      with:
+        timeout: 10
+        max-score: 26
+        setup-command: pip install -r requirements.txt
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        PYTEST_RESULTS: "${{steps.pytest.outputs.result}}"
+      with:
+        runners: pytest
+
+        

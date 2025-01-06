@@ -1,0 +1,5 @@
+pandas
+pytest
+numpy
+math
+re

@@ -1,0 +1,16 @@
+Question,Test_Num,Input,Expected_Output
+1,1,purple,False
+1,2,ada,True
+1,3,hello,False
+2,1,7,"[0, 1, 1, 2, 3, 5]"
+2,2,12,"[0, 1, 1, 2, 3, 5, 8]"
+2,3,-5,[]
+3,1,"('Coding is cool', 'co')",2
+3,2,"('Attitude is everything', 'tt')",1
+3,3,"('Superstitious and superfluous', 'super')",2
+4,1,"([1, 2, 3, 4], [5, 6, 7, 8])","[6.0, 8.0, 10.0, 12.0]"
+4,2,"([0, 0, 0, 0], [0, 0, 0])",[]
+4,3,"([1, 2, 8, 3], [4, 5, 6, 7])","[5.0, 7.0, 14.0, 10.0]"
+5,1,password,False
+5,2,Password1,True
+5,3,12345678,False
