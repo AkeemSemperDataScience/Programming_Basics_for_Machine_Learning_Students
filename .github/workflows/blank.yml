@@ -5,8 +5,8 @@ name: CI
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  #push:
-  #  branches: [ "main" ]
+  push:
+    branches: [ "main" ]
   #pull_request:
   #  branches: [ "main" ]
   # Allows you to run this workflow manually from the Actions tab
@@ -51,7 +51,7 @@ jobs:
 
           # Copy all
           cp -r Programming_Basics_for_ML_Full_Repo/* .
-          rm -rf course_material*
+          #rm -rf course_material*
           #ls -la workbooks
 
           # Clear
